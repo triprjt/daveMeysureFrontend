@@ -1,0 +1,73 @@
+.measurement-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #36c7e4;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 600px;
+  margin: auto;
+}
+
+.measurement-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.measurement-form-container label {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.measurement-form-container input {
+  width: 50%;
+}
+
+.measurement-form-container button {
+  background-color: #2a0f90;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.hidden-message {
+  display: none;
+}
+
+.success-message {
+  color: green;
+}
+
+.error-message {
+  color: red;
+}
+
+.input-error {
+  /* display: inline; */
+  color: red;
+  display: flex;
+
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-top: auto;
+  /* margin-bottom: auto; */
+  /* margin-right: auto; */
+  /* text-align: center; */
+}
