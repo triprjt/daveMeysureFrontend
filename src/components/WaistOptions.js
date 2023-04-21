@@ -2,11 +2,16 @@ import React, { useContext, useEffect, useState } from "react";
 import UseManualContext from "../context/useManualContext";
 import "./WaistOptions.css";
 
-function WaistOptions({ waistOptions, onSubmit, setMessage }) {
+function WaistOptions({
+  waistOptions,
+  onSubmit,
+  setMessage,
+  waistError,
+  setWaistError,
+}) {
   const [selectedWaist, setSelectedWaist] = useState("");
   const [manualWaist, setManualWaist] = useState("");
   const { useManual, setUseManual, useAPIflag } = useContext(UseManualContext);
-  const [waistError, setWaistError] = useState("");
 
   const waistRegex =
     /^(?!0(\.0{1,2})?$)(150(\.00)?|1[0-4]\d?|[1-9]\d?)(\.\d{1,2})?$/;
@@ -83,9 +88,11 @@ function WaistOptions({ waistOptions, onSubmit, setMessage }) {
               />
             </label>
           )}
-          <span className={waistError ? "input-error" : "hidden-message"}>
-            {waistError}
-          </span>
+          {useManual && (
+            <span className={waistError ? "input-error" : "hidden-message"}>
+              {waistError}
+            </span>
+          )}
           <br />
           <button type="submit">Submit</button>
         </form>

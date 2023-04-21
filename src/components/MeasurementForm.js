@@ -12,6 +12,7 @@ function MeasurementForm() {
   const [heightError, setHeightError] = useState("");
   const [ageError, setAgeError] = useState("");
   const [weightError, setWeightError] = useState("");
+  const [waistError, setWaistError] = useState("");
 
   const [waistOptions, setWaistOptions] = useState([]);
   const [message, setMessage] = useState("");
@@ -53,6 +54,8 @@ function MeasurementForm() {
       // console.log("height:", height, "age: ", age, "weight:", weight);
       setAPIflag(true);
       setSuccessMessage("");
+      setWaistError("");
+      setUseManual(false);
       console.log(response);
       if (response.data.length > 0) {
         setWaistOptions(response.data.sort());
@@ -168,6 +171,8 @@ function MeasurementForm() {
             waistOptions={waistOptions}
             onSubmit={handleSubmit}
             setMessage={setMessage}
+            waistError={waistError}
+            setWaistError={setWaistError}
           />
         )}
       </div>
