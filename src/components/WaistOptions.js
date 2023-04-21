@@ -16,6 +16,14 @@ function WaistOptions({ waistOptions, onSubmit, setMessage }) {
     return waistValid;
   };
 
+  useEffect(() => {
+    if (waistOptions && waistOptions.length > 0) {
+      setSelectedWaist(waistOptions[0]);
+    } else {
+      setSelectedWaist(null);
+    }
+  }, [waistOptions]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -31,12 +39,6 @@ function WaistOptions({ waistOptions, onSubmit, setMessage }) {
     setManualWaist("");
     onSubmit(waist);
   };
-
-  // useEffect(() => {
-  //   if (!useManual) {
-  //     setWaistError("");
-  //   }
-  // }, [useManual]);
 
   return (
     <div className="waist-options-container">

@@ -54,9 +54,9 @@ function MeasurementForm() {
       setAPIflag(true);
       setSuccessMessage("");
       console.log(response);
-      if (response.data.waist_ranges.length > 0) {
-        setWaistOptions(response.data.waist_ranges.sort());
-        console.log("Response data:", response.data.waist_ranges);
+      if (response.data.length > 0) {
+        setWaistOptions(response.data.sort());
+        console.log("Response data:", response.data);
 
         setMessage("");
       } else {
